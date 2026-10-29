@@ -1,0 +1,23 @@
+# Trained weights and replay buffers
+saved_models/
+from_scratch/saved_models/
+*.zip
+*.pkl
+*.pt
+*.pth
+*.ckpt
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Keep vendored robosuite as files, not a nested git repo
+mujoco/robosuite/.git.local/

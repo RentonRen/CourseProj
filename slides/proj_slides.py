@@ -8,10 +8,14 @@ from pptx.enum.text import PP_ALIGN
 from pptx.oxml.ns import qn
 from pptx.util import Pt
 
+from pathlib import Path
+
 from build_rl_section import INK, MUTED, NAVY, add_muli_run
-from sim_slides import _box, _emu, _fresh, _title
+from sim_slides import _box, _contain_picture, _emu, _fresh, _title
 
 NOTE = "Notebook: hri_handover_tutorial.ipynb"
+ROOT = Path(__file__).resolve().parent
+PROJ = ROOT / "images" / "proj"
 
 
 def _section(prs, exemplar: int, title: str, part: str) -> None:
@@ -123,6 +127,53 @@ def _setup(prs, exemplar: int) -> None:
     _note(slide)
 
 
+def _robosuite(prs, exemplar: int) -> None:
+    slide = _fresh(prs, exemplar)
+    _title(slide, "robosuite")
+    _box(
+        slide,
+        0.42,
+        0.88,
+        4.70,
+        3.95,
+        [
+            [("•  MuJoCo: physics only", False, 16, INK)],
+            [("      bodies, joints, contact", False, 15, INK)],
+            [("•  robosuite, 2017, Stanford SVL", False, 16, INK)],
+            [("      now ARISE / UT Austin / NVIDIA", False, 15, INK)],
+            [("•  What it adds on MuJoCo", True, 16, INK)],
+            [("      Ready robots and tasks", False, 16, INK)],
+            [("      Controllers (OSC, IK)", False, 16, INK)],
+            [("      Cameras and an obs dict", False, 16, INK)],
+            [("      Gym-style reset / step", False, 16, INK)],
+            [("      Modular robot / arena / object", False, 16, INK)],
+        ],
+    )
+    _contain_picture(slide, PROJ / "part0_imports.png", 5.20, 0.88, 4.40, 3.70)
+    _box(
+        slide,
+        5.20,
+        4.62,
+        4.40,
+        0.28,
+        ["Part 0 of hri_handover_tutorial.ipynb"],
+        size=10,
+        color=MUTED,
+        align=PP_ALIGN.RIGHT,
+    )
+    _box(
+        slide,
+        0.42,
+        4.88,
+        5.5,
+        0.22,
+        ["Zhu et al., robosuite. arXiv:2009.12293, 2020."],
+        size=10,
+        color=MUTED,
+    )
+    _note(slide)
+
+
 def _env_config(prs, exemplar: int) -> None:
     slide = _fresh(prs, exemplar)
     _title(slide, "The environment")
@@ -174,4 +225,5 @@ def _env_config(prs, exemplar: int) -> None:
 def add_project_slides(prs, exemplar: int) -> None:
     _section(prs, exemplar, "Course project", "Part 3 of 3")
     _setup(prs, exemplar)
+    _robosuite(prs, exemplar)
     _env_config(prs, exemplar)

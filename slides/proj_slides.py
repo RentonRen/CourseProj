@@ -101,7 +101,7 @@ def _setup(prs, exemplar: int) -> None:
         8.80,
         1.95,
         [
-            "git clone https://github.com/Renton-Ren/CourseProj.git",
+            "git clone https://github.com/RentonRen/CourseProj.git",
             "cd CourseProj",
             "conda create -n cien4258 python=3.10",
             "conda activate cien4258",

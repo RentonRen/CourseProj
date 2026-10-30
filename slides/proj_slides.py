@@ -142,11 +142,11 @@ def _robosuite(prs, exemplar: int) -> None:
             [("•  robosuite, 2017, Stanford SVL", False, 16, INK)],
             [("      now ARISE / UT Austin / NVIDIA", False, 15, INK)],
             [("•  What it adds on MuJoCo", True, 16, INK)],
-            [("      Ready robots and tasks", False, 16, INK)],
+            [("      Ready robots (Panda, XArm7, …)", False, 16, INK)],
+            [("      Built-in task scenes to test on", False, 16, INK)],
+            [("      Small edits on an existing scene", False, 16, INK)],
             [("      Controllers (OSC, IK)", False, 16, INK)],
-            [("      Cameras and an obs dict", False, 16, INK)],
-            [("      Gym-style reset / step", False, 16, INK)],
-            [("      Modular robot / arena / object", False, 16, INK)],
+            [("      Cameras, obs dict, Gym reset / step", False, 16, INK)],
         ],
     )
     _contain_picture(slide, PROJ / "part0_imports.png", 5.20, 0.88, 4.40, 3.70)

@@ -129,7 +129,7 @@ def _setup(prs, exemplar: int) -> None:
 
 def _robosuite(prs, exemplar: int) -> None:
     slide = _fresh(prs, exemplar)
-    _title(slide, "robosuite")
+    _title(slide, "Part 0")
     _box(
         slide,
         0.42,
@@ -189,7 +189,7 @@ def _robosuite(prs, exemplar: int) -> None:
 
 def _env_config(prs, exemplar: int) -> None:
     slide = _fresh(prs, exemplar)
-    _title(slide, "The environment")
+    _title(slide, "Part 1")
     _panel(slide, 0.40, 0.88, 5.35, 3.95)
     _code(
         slide,

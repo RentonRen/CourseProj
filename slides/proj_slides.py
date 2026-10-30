@@ -68,42 +68,41 @@ def _code(slide, x, y, w, h, lines, *, size=13) -> None:
 
 def _setup(prs, exemplar: int) -> None:
     slide = _fresh(prs, exemplar)
-    _title(slide, "Set up")
-    _box(slide, 0.42, 0.82, 4.50, 0.36, [("Hardware", True, 18, NAVY)])
+    _title(slide, "Part 0 — Setup")
+    _box(slide, 0.42, 0.76, 4.70, 0.26, [("Hardware", True, 15, NAVY)])
     _box(
         slide,
         0.42,
-        1.14,
-        4.50,
-        1.45,
+        0.98,
+        4.70,
+        0.72,
         [
-            [("•  macOS, Linux, or Windows", False, 16, INK)],
-            [("•  8 GB RAM, a few GB of disk", False, 16, INK)],
-            [("•  GPU optional; CPU is enough", False, 16, INK)],
-            [("      to open the notebook", False, 15, INK)],
+            [("•  macOS, Linux, or Windows", False, 13, INK)],
+            [("•  8 GB RAM, a few GB of disk", False, 13, INK)],
+            [("•  GPU optional; CPU is enough to open the notebook", False, 13, INK)],
         ],
     )
-    _box(slide, 5.10, 0.82, 4.50, 0.36, [("Get the repo", True, 18, NAVY)])
+    _box(slide, 0.42, 1.70, 4.70, 0.26, [("Get the repo", True, 15, NAVY)])
     _box(
         slide,
-        5.10,
-        1.14,
-        4.50,
-        1.45,
+        0.42,
+        1.92,
+        4.70,
+        0.90,
         [
-            [("•  Clone CourseProj from GitHub", False, 16, INK)],
-            [("•  Conda, Python 3.10", False, 16, INK)],
-            [("•  pip installs local robosuite", False, 16, INK)],
-            [("•  Then open the notebook", False, 16, INK)],
+            [("•  Clone CourseProj from GitHub", False, 13, INK)],
+            [("•  Conda, Python 3.10", False, 13, INK)],
+            [("•  pip installs local robosuite", False, 13, INK)],
+            [("•  Then open the notebook", False, 13, INK)],
         ],
     )
-    _panel(slide, 0.42, 2.62, 9.18, 2.00)
+    _panel(slide, 0.42, 2.86, 4.70, 1.62)
     _code(
         slide,
-        0.62,
-        2.74,
-        8.80,
-        1.78,
+        0.52,
+        2.94,
+        4.50,
+        1.48,
         [
             "git clone https://github.com/RentonRen/CourseProj.git",
             "cd CourseProj",
@@ -112,16 +111,31 @@ def _setup(prs, exemplar: int) -> None:
             "pip install -r requirements.txt",
             "jupyter notebook hri_handover_tutorial.ipynb",
         ],
-        size=14,
+        size=11,
+    )
+    _contain_picture(slide, PROJ / "part0_imports.png", 5.22, 0.80, 4.36, 3.70)
+    _box(
+        slide,
+        5.22,
+        4.54,
+        4.36,
+        0.22,
+        ["Part 0 of hri_handover_tutorial.ipynb"],
+        size=10,
+        color=MUTED,
+        align=PP_ALIGN.RIGHT,
     )
     _box(
         slide,
         0.42,
-        4.88,
-        8.8,
-        0.24,
-        ["Windows: create C:\\tmp, copy mujoco.dll into robosuite/utils, set MUJOCO_GL=wgl."],
-        size=11,
+        4.52,
+        4.70,
+        0.36,
+        [
+            "Windows: create C:\\tmp, copy mujoco.dll into robosuite/utils,",
+            "set MUJOCO_GL=wgl.",
+        ],
+        size=10,
         color=MUTED,
     )
     _note(slide)
@@ -129,50 +143,39 @@ def _setup(prs, exemplar: int) -> None:
 
 def _robosuite(prs, exemplar: int) -> None:
     slide = _fresh(prs, exemplar)
-    _title(slide, "Part 0")
+    _title(slide, "Part 1")
     _box(
         slide,
         0.42,
         0.82,
-        4.75,
-        2.55,
+        4.85,
+        3.20,
         [
-            [("A robotics library built on MuJoCo.", False, 15, INK)],
-            [("It provides:", False, 15, INK)],
-            [("•  Ready-made robot arms", False, 15, INK)],
-            [("      Panda, XArm7, UR5e, …", False, 14, INK)],
-            [("•  Ready-made manipulation tasks", False, 15, INK)],
-            [("      Lift, Pick-and-Place, Assembly, …", False, 14, INK)],
-            [("•  Cameras, sensors, and a standard", False, 15, INK)],
-            [("      observation / action interface", False, 14, INK)],
-            [("•  Built-in scenes to test as-is,", False, 15, INK)],
-            [("      or change a little and retest", False, 14, INK)],
+            [("A robotics library built on MuJoCo.", False, 16, INK)],
+            [("It provides:", False, 16, INK)],
+            [("•  Ready-made robot arms", False, 16, INK)],
+            [("      Panda, XArm7, UR5e, …", False, 15, INK)],
+            [("•  Ready-made manipulation tasks", False, 16, INK)],
+            [("      Lift, Pick-and-Place, Assembly, …", False, 15, INK)],
+            [("•  Cameras, sensors, and a standard", False, 16, INK)],
+            [("      observation / action interface", False, 15, INK)],
+            [("•  Built-in scenes to test as-is,", False, 16, INK)],
+            [("      or change a little and retest", False, 15, INK)],
         ],
     )
-    _panel(slide, 0.42, 3.40, 4.75, 1.28)
+    _panel(slide, 5.40, 1.15, 4.18, 1.45)
     _code(
         slide,
-        0.55,
-        3.52,
-        4.50,
-        1.10,
+        5.52,
+        1.30,
+        3.95,
+        1.20,
         [
             "obs = env.reset()",
-            "obs, reward, done, info = env.step(action)",
+            "obs, reward, done, info =",
+            "    env.step(action)",
         ],
-        size=12,
-    )
-    _contain_picture(slide, PROJ / "part0_imports.png", 5.25, 0.86, 4.35, 3.55)
-    _box(
-        slide,
-        5.25,
-        4.48,
-        4.35,
-        0.24,
-        ["Part 0 of hri_handover_tutorial.ipynb"],
-        size=10,
-        color=MUTED,
-        align=PP_ALIGN.RIGHT,
+        size=13,
     )
     _box(
         slide,

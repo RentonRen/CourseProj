@@ -1,0 +1,13 @@
+# Local robosuite with HumanRobotHandover (editable install into site-packages)
+-e mujoco/robosuite
+
+# Notebook and training
+gymnasium
+stable-baselines3
+imageio
+imageio-ffmpeg
+matplotlib
+pandas
+jupyter
+ipykernel
+torch

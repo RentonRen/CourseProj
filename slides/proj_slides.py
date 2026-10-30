@@ -73,13 +73,13 @@ def _setup(prs, exemplar: int) -> None:
         4.50,
         1.45,
         [
-            [("•  macOS or Linux", False, 16, INK)],
+            [("•  macOS, Linux, or Windows", False, 16, INK)],
             [("•  8 GB RAM, a few GB of disk", False, 16, INK)],
             [("•  GPU optional; CPU is enough", False, 16, INK)],
             [("      to open the notebook", False, 15, INK)],
         ],
     )
-    _box(slide, 5.10, 0.82, 4.50, 0.36, [("Software", True, 18, NAVY)])
+    _box(slide, 5.10, 0.82, 4.50, 0.36, [("Get the repo", True, 18, NAVY)])
     _box(
         slide,
         5.10,
@@ -87,29 +87,38 @@ def _setup(prs, exemplar: int) -> None:
         4.50,
         1.45,
         [
+            [("•  Clone CourseProj from GitHub", False, 16, INK)],
             [("•  Conda, Python 3.10", False, 16, INK)],
-            [("•  Local robosuite 1.5.2", False, 16, INK)],
-            [("•  Gymnasium, Stable-Baselines3", False, 16, INK)],
-            [("•  Jupyter, imageio, matplotlib", False, 16, INK)],
+            [("•  pip installs local robosuite", False, 16, INK)],
+            [("•  Then open the notebook", False, 16, INK)],
         ],
     )
-    _panel(slide, 0.42, 2.62, 9.18, 2.22)
+    _panel(slide, 0.42, 2.62, 9.18, 2.00)
     _code(
         slide,
         0.62,
-        2.76,
+        2.74,
         8.80,
-        1.95,
+        1.78,
         [
             "git clone https://github.com/RentonRen/CourseProj.git",
             "cd CourseProj",
-            "conda create -n cien4258 python=3.10",
-            "conda activate cien4258",
-            "pip install -r mujoco/robosuite/requirements.txt",
-            "pip install gymnasium stable-baselines3 imageio matplotlib jupyter",
+            "conda create -n courseproj python=3.10",
+            "conda activate courseproj",
+            "pip install -r requirements.txt",
             "jupyter notebook hri_handover_tutorial.ipynb",
         ],
         size=14,
+    )
+    _box(
+        slide,
+        0.42,
+        4.88,
+        8.8,
+        0.24,
+        ["Windows: create C:\\tmp, copy mujoco.dll into robosuite/utils, set MUJOCO_GL=wgl."],
+        size=11,
+        color=MUTED,
     )
     _note(slide)
 

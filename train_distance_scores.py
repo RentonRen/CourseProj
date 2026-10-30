@@ -6,15 +6,10 @@ for 60 steps.
 """
 
 import argparse
-import sys
 import time
 from pathlib import Path
 
 import numpy as np
-
-REPO = Path(__file__).resolve().parent / "mujoco" / "robosuite"
-if str(REPO) not in sys.path:
-    sys.path.insert(0, str(REPO))
 
 import gymnasium as gym
 import robosuite as suite
